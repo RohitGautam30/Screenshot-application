@@ -1,0 +1,149 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500&family=Rubik&display=swap');
+
+body {
+  font-family: 'Rubik', sans-serif;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+  color: #ffffff;
+}
+
+.container {
+  max-width: 1000px;
+  margin: auto;
+  padding: 40px 20px;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(12px);
+  border-radius: 20px;
+  box-shadow: 0 0 40px rgba(0, 255, 255, 0.1);
+}
+
+h1 {
+  text-align: center;
+  font-size: 2.4em;
+  margin-bottom: 50px;
+  color: #00eaff;
+  font-family: 'Orbitron', sans-serif;
+  text-shadow: 0 0 10px #00eaff;
+}
+
+.step {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 50px;
+  padding: 20px;
+  border-left: 4px solid #00eaff;
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 15px;
+  transition: transform 0.3s ease;
+}
+
+.step:hover {
+  transform: translateX(5px);
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.2);
+}
+
+.number {
+  font-size: 3em;
+  font-weight: bold;
+  color: #00eaff;
+  text-shadow: 0 0 8px #00eaff;
+  width: 70px;
+  height: 70px;
+  border-radius: 12px;
+  text-align: center;
+  line-height: 70px;
+  margin-right: 20px;
+  flex-shrink: 0;
+  background: rgba(0, 234, 255, 0.1);
+  border: 1px solid #00eaff;
+}
+
+.text h3 {
+  margin: 0 0 10px;
+  font-size: 1.4em;
+  color: #ffffff;
+}
+
+.text p {
+  margin: 0;
+  color: #cfd8dc;
+  line-height: 1.6em;
+  font-size: 1em;
+}
+
+button {
+  display: block;
+  margin: 50px auto 0;
+  padding: 14px 32px;
+  font-size: 16px;
+  background: transparent;
+  color: #00eaff;
+  border: 2px solid #00eaff;
+  border-radius: 50px;
+  cursor: pointer;
+  font-family: 'Orbitron', sans-serif;
+  transition: all 0.3s ease;
+  text-shadow: 0 0 5px #00eaff;
+}
+
+button:hover {
+  background: #00eaff;
+  color: #000;
+  box-shadow: 0 0 20px #00eaff, 0 0 40px #00eaff;
+}
+
+/* 🔁 Responsive Breakpoints */
+
+/* For tablets and smaller laptops */
+@media (max-width: 900px) {
+  .container {
+    padding: 30px 15px;
+  }
+
+  h1 {
+    font-size: 2em;
+  }
+
+  .number {
+    font-size: 2.5em;
+    width: 60px;
+    height: 60px;
+    line-height: 60px;
+  }
+
+  .text h3 {
+    font-size: 1.2em;
+  }
+
+  .text p {
+    font-size: 0.95em;
+  }
+}
+
+/* For phones */
+@media (max-width: 600px) {
+  .step {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .number {
+    margin: 0 0 15px 0;
+  }
+
+  .text h3 {
+    font-size: 1.1em;
+  }
+
+  .text p {
+    font-size: 0.9em;
+  }
+
+  button {
+    width: 100%;
+    font-size: 14px;
+    padding: 12px;
+  }
+}

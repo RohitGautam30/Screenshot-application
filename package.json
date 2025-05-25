@@ -1,0 +1,17 @@
+{
+  "name": "screen-shot-website",
+  "version": "1.0.0",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "express": "^5.1.0",
+    "puppeteer": "^24.9.0",
+    "screenshot-desktop": "^1.15.1"
+  }
+}
