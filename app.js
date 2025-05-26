@@ -1,38 +1,27 @@
-const express = require('express');
-const path = require('path');
+// In app.js
 const puppeteer = require('puppeteer');
 
-const app = express();
-const PORT = process.env.PORT || 3000;
-
-// Serve static files from the 'public' directory
-app.use(express.static(path.join(__dirname, 'public')));
-
-app.get('/screenshot', async (req, res) => {
+app.get('/fullscreenshot', async (req, res) => {
   try {
-    console.log('Launching Puppeteer...');
     const browser = await puppeteer.launch({
-      headless: true,
+      headless: 'new',
       args: ['--no-sandbox', '--disable-setuid-sandbox']
     });
-
     const page = await browser.newPage();
-    await page.goto(`http://localhost:${PORT}`, { waitUntil: 'networkidle0' });
+    await page.goto('https://screenshot-application.onrender.com', {
+      waitUntil: 'networkidle0'
+    });
 
     const screenshotBuffer = await page.screenshot({ fullPage: true });
     await browser.close();
 
     res.set({
       'Content-Type': 'image/png',
-      'Content-Disposition': 'inline; filename="screenshot.png"',
+      'Content-Disposition': 'attachment; filename="webpage.png"',
     });
     res.send(screenshotBuffer);
   } catch (error) {
     console.error('Screenshot error:', error);
-    res.status(500).send('Error taking screenshot.');
+    res.status(500).send('Error taking webpage screenshot.');
   }
-});
-
-app.listen(PORT, () => {
-  console.log(`✅ Server running at http://localhost:${PORT}`);
 });
