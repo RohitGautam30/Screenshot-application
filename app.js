@@ -1,3 +1,8 @@
+const browser = await puppeteer.launch({
+  headless: true,
+  args: ['--no-sandbox', '--disable-setuid-sandbox'],
+});
+
 const express = require('express');
 const puppeteer = require('puppeteer');
 const path = require('path');
